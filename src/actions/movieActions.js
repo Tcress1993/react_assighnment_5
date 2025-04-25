@@ -32,6 +32,7 @@ export function setMovie(movie) {
 export function fetchMovie(movieId) {
     return dispatch => {
         return fetch(`${env.REACT_APP_API_URL}/movies/${movieId}?review=true`, {
+            
             method: 'GET',
             headers: {
                 'Accept': 'application/json',
@@ -52,7 +53,7 @@ export function fetchMovie(movieId) {
 
 export function fetchMovies() {
     return dispatch => {
-        return fetch(`${env.REACT_APP_API_URL}/movies?reviews=true`, {
+        return fetch(`${env.REACT_APP_API_URL}/movies?review=true`, {
             method: 'GET',
             headers: {
                 'Accept': 'application/json',

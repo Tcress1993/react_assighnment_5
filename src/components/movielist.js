@@ -11,6 +11,7 @@ function MovieList() {
 
     // Memoize the movies array
     const memoizedMovies = useMemo(() => {
+        console.log(movies);
         return movies;
     }, [movies]);
 
@@ -33,6 +34,7 @@ function MovieList() {
 
     return (
         <Carousel onSelect={handleSelect} className="bg-dark text-light p-4 rounded">
+          {console.log(memoizedMovies)}
           {memoizedMovies.map((movie) => (
             <Carousel.Item key={movie._id}>
               {/* Use Nav.Link with "as={Link}" to avoid nested anchors */}
