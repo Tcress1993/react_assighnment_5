@@ -15,6 +15,10 @@ const MovieDetail = () => {
   const loading = useSelector(state => state.movie.loading); // Assuming you have a loading state in your reducer
   const error = useSelector(state => state.movie.error); // Assuming you have an error state in your reducer
   console.log(selectedMovie);
+  console.log(selectedMovie.reviews);
+  console.log(selectedMovie.actors);
+  console.log(selectedMovie.avgRating);
+  
 
   useEffect(() => {
     dispatch(fetchMovie(movieId));
