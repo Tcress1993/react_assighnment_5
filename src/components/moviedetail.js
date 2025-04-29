@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fetchMovie , submitReview} from '../actions/movieActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { Card, ListGroup, ListGroupItem, Image } from 'react-bootstrap';
+import { Card, ListGroup, ListGroupItem, Image, Form } from 'react-bootstrap';
 import { BsStarFill } from 'react-icons/bs';
 import { useParams } from 'react-router-dom'; // Import useParams
 import { set } from 'date-fns';
@@ -9,6 +9,8 @@ import { set } from 'date-fns';
 const MovieDetail = () => {
   const dispatch = useDispatch();
   const { movieId } = useParams(); // Get movieId from URL parameters
+  const [review, setReview] = React.useState('');
+  const [rating, setRating] = React.useState(1); // Default rating is 1
   const selectedMovie = useSelector(state => state.movie.selectedMovie);
   const loading = useSelector(state => state.movie.loading); // Assuming you have a loading state in your reducer
   const error = useSelector(state => state.movie.error); // Assuming you have an error state in your reducer
