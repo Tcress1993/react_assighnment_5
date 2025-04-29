@@ -64,11 +64,15 @@ const MovieDetail = () => {
           <ListGroupItem>{selectedMovie.title}</ListGroupItem>
           <ListGroupItem>
             {console.log(selectedMovie.actors)}
-            {selectedMovie.actors.map((actor,i) => (
-              <p key={i}>
-                <b>{actor.actorName}</b> {actor.characterName}
-              </p>
-            ))}
+            {!selectedMovie.reviews || (selectedMovie.reviews.length === 0 ) ? (
+              <p>No reviews available.</p>
+            ) : (
+              selectedMovie.actors.map((actor, i) => (
+                <p key={i}>
+                  <b>{actor.actorName}</b> {actor.characterName}
+                </p>
+              ))
+            )}
           </ListGroupItem>
           <ListGroupItem>
             <h4>
