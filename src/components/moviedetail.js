@@ -115,6 +115,7 @@ const MovieDetail = () => {
                 <option value="5">5</option>
               </Form.Control>
             </Form.Group>
+            <button type = "submit" className="btn btn-primary mt-2" onClick={handleSubmit}>Submit</button>
           </Form>
         </Card.Body>
       </Card>
