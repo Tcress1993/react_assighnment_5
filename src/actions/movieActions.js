@@ -23,6 +23,35 @@ function movieSet(movie) {
     }
 }
 
+function reviewSubmitted(review) {
+    return {
+        type: actionTypes.SUBMIT_REVIEW,
+        review: review
+    }
+}
+
+export function submitReview(data) {
+    return dispatch => {
+        return fetch(`${env.REACT_APP_API_URL}/movies/${data.movieId}/review`, {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                'Authorization': localStorage.getItem('token')
+            },
+            body: JSON.stringify(data),
+            mode: 'cors'
+        }).then((response) => {
+            if (!response.ok) {
+                throw Error(response.statusText);
+            }
+            return response.json()
+        }).then((res) => {
+            dispatch(reviewSubmitted(res));
+        }).catch((e) => console.log(e));
+    }
+}
+
 export function setMovie(movie) {
     return dispatch => {
         dispatch(movieSet(movie));
