@@ -52,13 +52,13 @@ const MovieDetail = () => {
       <Card className="bg-dark text-dark p-4 rounded">
         <Card.Header>Movie Detail</Card.Header>
         <Card.Body>
-          <Image className="image" src={selectedMovie[0].imageUrl} thumbnail />
+          <Image className="image" src={selectedMovie.imageUrl} thumbnail />
         </Card.Body>
         <ListGroup>
-          <ListGroupItem>{selectedMovie[0].title}</ListGroupItem>
+          <ListGroupItem>{selectedMovie.title}</ListGroupItem>
           <ListGroupItem>
-            {console.log(selectedMovie[0].actors)}
-            {selectedMovie[0].actors.map((actor,i) => (
+            {console.log(selectedMovie.actors)}
+            {selectedMovie.actors.map((actor,i) => (
               <p key={i}>
                 <b>{actor.actorName}</b> {actor.characterName}
               </p>
@@ -66,15 +66,15 @@ const MovieDetail = () => {
           </ListGroupItem>
           <ListGroupItem>
             <h4>
-              <BsStarFill /> {selectedMovie[0].avgRating}
+              <BsStarFill /> {selectedMovie.avgRating}
             </h4>
           </ListGroupItem>
         </ListGroup>
         <Card.Body>
-          {!selectedMovie[0].reviews || (selectedMovie[0].reviews.length === 0 )? (
+          {!selectedMovie[0].reviews || (selectedMovie.reviews.length === 0 )? (
             <p>No reviews available.</p>
           ) : (
-            selectedMovie[0].reviews.map((review, i) => (
+            selectedMovie.reviews.map((review, i) => (
               <p key={i}>
                 <b>{review.username}</b>&nbsp; {review.review} &nbsp; <BsStarFill />{' '}
                 {review.rating}
