@@ -71,7 +71,7 @@ const MovieDetail = () => {
           </ListGroupItem>
         </ListGroup>
         <Card.Body>
-          {!selectedMovie[0].reviews || (selectedMovie.reviews.length === 0 )? (
+          {!selectedMovie.reviews || (selectedMovie.reviews.length === 0 )? (
             <p>No reviews available.</p>
           ) : (
             selectedMovie.reviews.map((review, i) => (
