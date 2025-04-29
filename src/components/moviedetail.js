@@ -98,7 +98,7 @@ const MovieDetail = () => {
           <h5>Add a Review</h5>
           <Form onSubmit = {handleSubmit}>
             <Form.Group controlId="reviewText">
-              <Form.label>Review</Form.label>
+              <Form.Label>Review</Form.Label>
               <Form.Control as="textarea" rows={3} value={review} onChange={(e) => setReview(e.target.value)} required/>
             </Form.Group>
             <Form.Group controlId = "Rating Scale">
