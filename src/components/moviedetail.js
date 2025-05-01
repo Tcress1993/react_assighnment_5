@@ -21,7 +21,7 @@ const MovieDetail = () => {
   console.log(` actors ${selectedMovie.actors}`);
   console.log(`avg rating ${selectedMovie.avgRating}`);
 
-  const reviewRef = React.useRef(null);
+  
   useEffect(() => {
     dispatch(fetchMovie(movieId));
   }, [dispatch, movieId]);
