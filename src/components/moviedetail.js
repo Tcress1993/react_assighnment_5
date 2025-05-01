@@ -103,7 +103,7 @@ const MovieDetail = () => {
           <Form onSubmit = {handleSubmit}>
             <Form.Group controlId="reviewText">
               <Form.Label>Review</Form.Label>
-              <Form.Control as="textarea" rows={3} value={review} required/>
+              <Form.Control as="textarea" rows={3} value={review} ref={reviewRef} required/>
             </Form.Group>
             <Form.Group controlId = "Rating Scale">
               <Form.Label>Rating</Form.Label>
