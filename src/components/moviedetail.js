@@ -21,7 +21,7 @@ const MovieDetail = () => {
   console.log(` actors ${selectedMovie.actors}`);
   console.log(`avg rating ${selectedMovie.avgRating}`);
 
-
+  const reviewRef = React.useRef(null);
   useEffect(() => {
     dispatch(fetchMovie(movieId));
   }, [dispatch, movieId]);
@@ -103,7 +103,7 @@ const MovieDetail = () => {
           <Form onSubmit = {handleSubmit}>
             <Form.Group controlId="reviewText">
               <Form.Label>Review</Form.Label>
-              <Form.Control as="textarea" rows={3} value={review} onChange={(e) => setReview(e.target.value)} required/>
+              <Form.Control as="textarea" rows={3} value={review} ref={reviewRef} required/>
             </Form.Group>
             <Form.Group controlId = "Rating Scale">
               <Form.Label>Rating</Form.Label>
