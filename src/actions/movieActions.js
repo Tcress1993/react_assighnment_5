@@ -70,12 +70,15 @@ export function fetchMovie(movieId) {
             },
             mode: 'cors'
         }).then((response) => {
+            
             if (!response.ok) {
                 throw Error(response.statusText);
             }
             return response.json()
         }).then((res) => {
-            dispatch(movieFetched(res));
+            console.log(res);
+            dispatch(movieFetched(res[0]));
+            
         }).catch((e) => console.log(e));
     }
 }

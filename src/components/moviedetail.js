@@ -23,7 +23,9 @@ const MovieDetail = () => {
 
   
   useEffect(() => {
+    console.log("fetch is being called");
     dispatch(fetchMovie(movieId));
+    console.log(dispatch(fetchMovie(movieId)));
   }, [dispatch, movieId]);
 
   const handleSubmit = (e) => {
@@ -103,7 +105,7 @@ const MovieDetail = () => {
           <Form onSubmit = {handleSubmit}>
             <Form.Group controlId="reviewText">
               <Form.Label>Review</Form.Label>
-              <Form.Control as="textarea" rows={3} value={review} onBlur = {(e)=> setReview(e.target.value)} required/>
+              <Form.Control as="textarea" rows={3} value={review} onChange = {(e)=> { setReview(e.target.value)}} required/>
             </Form.Group>
             <Form.Group controlId = "Rating Scale">
               <Form.Label>Rating</Form.Label>
