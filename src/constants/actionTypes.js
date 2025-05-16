@@ -4,7 +4,7 @@ const Constants = {
     FETCH_MOVIES: 'FETCH_MOVIES',
     FETCH_MOVIE: 'FETCH_MOVIE',
     SET_MOVIE: 'SET_MOVIE',
-    SUBMIT_REVIEW: 'SUMBIT_REVIEW'
+    SUBMIT_REVIEW: 'SUBMIT_REVIEW'
 }
 
 export default Constants;
